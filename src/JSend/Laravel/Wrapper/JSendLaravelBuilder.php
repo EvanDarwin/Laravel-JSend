@@ -2,12 +2,15 @@
 
 namespace JSend\Laravel\Wrapper;
 
+use Illuminate\Support\Facades\Response;
 use JSend\JSendBuilder;
 
 class JSendLaravelBuilder extends JSendBuilder
 {
     public function get()
     {
-        return \Response::json(parent::get());
+        $jsendResponse = parent::get();
+
+        return \Response::json($jsendResponse->getArray());
     }
 }

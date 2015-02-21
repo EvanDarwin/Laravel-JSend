@@ -2,5 +2,5 @@
 
 function jsend()
 {
-    return new \JSend\JSendBuilder();
+    return new \JSend\Laravel\Wrapper\JSendLaravelBuilder();
 }

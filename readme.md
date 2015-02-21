@@ -3,6 +3,11 @@ JSend-Laravel
 
 Return JSend responses from Laravel.
 
+Installation
+====
+
+Add `JSend\Laravel\ServiceProvider` to your providers array in **app.php**.
+
 Example
 ====
 
