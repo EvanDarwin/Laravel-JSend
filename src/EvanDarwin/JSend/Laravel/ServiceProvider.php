@@ -1,6 +1,6 @@
 <?php
 
-namespace JSend\Laravel;
+namespace EvanDarwin\JSend\Laravel;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
@@ -24,5 +24,13 @@ class ServiceProvider extends LaravelServiceProvider
         if (!function_exists('jsend')) {
             require_once 'helpers.php';
         }
+    }
+
+    public function boot()
+    {
+        // Publish our configuration files
+        $this->publishes([
+            __DIR__ . '/resources/configs/jsend.php' => config_path('jsend.php')
+        ], 'config');
     }
 }
