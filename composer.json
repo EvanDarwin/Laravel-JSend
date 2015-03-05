@@ -16,7 +16,7 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "evandarwin/jsend": "dev-master",
+    "evandarwin/jsend": "1.x",
     "illuminate/support": "5.0.x"
   },
   "autoload": {
