@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "EvanDarwin\\JSend\\Laravel\\": "src"
+      "EvanDarwin\\JSend\\Laravel\\": "src/EvanDarwin/JSend/Laravel"
     }
   }
 }
