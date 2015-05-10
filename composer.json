@@ -16,12 +16,20 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "evandarwin/jsend": "1.x",
+    "evandarwin/jsend": "dev-master",
     "illuminate/support": "5.0.x"
+  },
+  "require-dev": {
+    "orchestra/testbench": "~3.0"
   },
   "autoload": {
     "psr-4": {
       "EvanDarwin\\JSend\\Laravel\\": "src/EvanDarwin/JSend/Laravel"
     }
+  },
+  "autoload-dev": {
+    "files": [
+      "tests/LaravelJSend_TestCase.php"
+    ]
   }
 }

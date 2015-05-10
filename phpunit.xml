@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupStaticAttributes="false"
+        cacheTokens="false"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        forceCoversAnnotation="false"
+        mapTestClassNameToCoveredClassName="false"
+        printerClass="PHPUnit_TextUI_ResultPrinter"
+        bootstrap="tests/bootstrap.php"
+        processIsolation="false"
+        stopOnError="false"
+        stopOnFailure="false"
+        stopOnIncomplete="false"
+        stopOnSkipped="false"
+        testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+        verbose="false">
+
+    <testsuites>
+        <testsuite name="Laravel-JSend">
+            <directory>./tests/cases</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <blacklist>
+            <file>tests/bootstrap.php</file>
+        </blacklist>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/</directory>
+            <exclude>
+                <directory>src/EvanDarwin/JSend/Laravel/resources</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
