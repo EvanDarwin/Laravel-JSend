@@ -58,6 +58,7 @@ class YourController extends Controller
                       ->code(100)
                       ->message("Success")
                       ->data(['allGood' => true])
+                      ->get();
     }
 }
 ```
