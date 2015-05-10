@@ -1,5 +1,9 @@
 # JSend-Laravel
 
+[![Build Status](https://travis-ci.org/EvanDarwin/Laravel-JSend.svg?branch=master)](https://travis-ci.org/EvanDarwin/Laravel-JSend)
+[![Code Climate](https://codeclimate.com/github/EvanDarwin/Laravel-JSend/badges/gpa.svg)](https://codeclimate.com/github/EvanDarwin/Laravel-JSend)
+[![Test Coverage](https://codeclimate.com/github/EvanDarwin/Laravel-JSend/badges/coverage.svg)](https://codeclimate.com/github/EvanDarwin/Laravel-JSend/coverage)
+
 Return JSend responses from Laravel.
 
 ## Installation

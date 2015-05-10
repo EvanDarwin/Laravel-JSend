@@ -20,7 +20,8 @@
     "illuminate/support": "5.0.x"
   },
   "require-dev": {
-    "orchestra/testbench": "~3.0"
+    "orchestra/testbench": "~3.0",
+    "codeclimate/php-test-reporter": "dev-master"
   },
   "autoload": {
     "psr-4": {
