@@ -7,4 +7,4 @@ php:
   - hhvm
   - nightly
 after_success:
-  - ./vendor/bin/test-reporter # CodeClimate
+  - CODECLIMATE_REPO_TOKEN=f9c21f5f87187047d967a0f50281bd5b663820942a7b3e914c9d0b19c3d819f3 ./vendor/bin/test-reporter # CodeClimate
