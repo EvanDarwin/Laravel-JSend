@@ -15,7 +15,7 @@ class JSendBuilderTest extends LaravelJSend_TestCase
     public function testRendersCorrectly()
     {
         \Route::get('/jsend', function () {
-            return jsend()->failed()->code(404);
+            return jsend()->failed()->code(404)->get();
         });
 
         $response = $this->call('get', '/jsend');
@@ -49,6 +49,6 @@ class JSendBuilderTest extends LaravelJSend_TestCase
     {
         $this->app['config']->set('jsend.builder', '');
 
-        jsend();
+        jsend()->get();
     }
 }
