@@ -42,6 +42,17 @@ class JSendBuilderTest extends LaravelJSend_TestCase
     )), $response);
   }
 
+  public function testHttpStatus()
+  {
+    \Route::get('/jsend_http', function() {
+      return jsend()->failed()->code(403)->get(403);
+    });
+
+    $response = $this->call('get', '/jsend_http');
+
+    $this->assertResponseStatus(403);
+  }
+
   /**
    * @expectedException InvalidArgumentException
    */

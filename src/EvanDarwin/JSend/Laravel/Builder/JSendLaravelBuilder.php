@@ -8,6 +8,7 @@ class JSendLaravelBuilder extends JSendBuilder
 {
   public function get($statusCode = 200)
   {
-    return response($statusCode)->json(parent::get()->getArray());
+    return response(json_encode(parent::get()->getArray()), $statusCode)
+            ->header('Content-Type', 'application/json');
   }
 }
