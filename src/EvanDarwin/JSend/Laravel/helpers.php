@@ -1,9 +1,11 @@
 <?php
 
+use EvanDarwin\JSend\Laravel\Builder\JSendLaravelBuilder;
+
 /**
  * JSend helper function.
  *
- * @return \EvanDarwin\JSend\Laravel\Builder\JSendLaravelBuilder
+ * @return JSendLaravelBuilder
  */
 function jsend()
 {

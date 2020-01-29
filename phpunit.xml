@@ -6,15 +6,12 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          forceCoversAnnotation="false"
-         mapTestClassNameToCoveredClassName="false"
-         printerClass="PHPUnit_TextUI_ResultPrinter"
          bootstrap="tests/bootstrap.php"
          processIsolation="false"
          stopOnError="false"
          stopOnFailure="false"
          stopOnIncomplete="false"
          stopOnSkipped="false"
-         testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
          verbose="false">
 
     <testsuites>
@@ -24,9 +21,6 @@
     </testsuites>
 
     <filter>
-        <blacklist>
-            <file>tests/bootstrap.php</file>
-        </blacklist>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src/</directory>
             <exclude>

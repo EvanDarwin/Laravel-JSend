@@ -1,5 +1,6 @@
 {
   "name": "evandarwin/laravel-jsend",
+  "version": "2.0.0",
   "description": "Laravel JSend Response Helper",
   "keywords": [
     "laravel",
@@ -15,13 +16,13 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0",
-    "evandarwin/jsend": "1.2.*",
-    "illuminate/support": "~5.0"
+    "php": ">=7.2.0",
+    "evandarwin/jsend": "~2.0.0",
+    "illuminate/support": "~6.0",
+    "ext-json": "*"
   },
   "require-dev": {
-    "orchestra/testbench": "~3.0",
-    "codeclimate/php-test-reporter": "dev-master"
+    "orchestra/testbench": "~4.0"
   },
   "autoload": {
     "psr-4": {
