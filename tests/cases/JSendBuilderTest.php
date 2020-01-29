@@ -1,65 +1,59 @@
 <?php
 
-class JSendBuilderTest extends LaravelJSend_TestCase
-{
-  public function testDefaultValues()
-  {
-    $response = jsend()->get();
+use Illuminate\Support\Facades\Route;
 
-    $this->assertJson(json_encode(array(
-        'status' => 'success',
-        'data'   => array()
-    )), $response);
-  }
-
-  public function testRendersCorrectly()
-  {
-    \Route::get('/jsend', function () {
-      return jsend()->failed()->code(404)->get();
-    });
-
-    $response = $this->call('get', '/jsend');
-
-    $this->assertJson(json_encode(array(
-        'status' => 'failed',
-        'code'   => 404,
-        'data'   => array()
-    )), $response);
-  }
-
-  public function testRenderCompatibility()
-  {
-    \Route::get('/jsend', function () {
-      return jsend()->failed()->code(404)->get();
-    });
-
-    $response = $this->call('get', '/jsend');
-
-    $this->assertJson(json_encode(array(
-        'status' => 'failed',
-        'code'   => 404,
-        'data'   => array()
-    )), $response);
-  }
-
-  public function testHttpStatus()
-  {
-    \Route::get('/jsend_http', function() {
-      return jsend()->failed()->code(403)->get(403);
-    });
-
-    $response = $this->call('get', '/jsend_http');
-
-    $this->assertResponseStatus(403);
-  }
-
-  /**
-   * @expectedException InvalidArgumentException
-   */
-  public function testInvalidBuilderException()
-  {
-    $this->app['config']->set('jsend.builder', '');
-
-    jsend()->get();
-  }
+class JSendBuilderTest extends LaravelJSend_TestCase {
+    public function testDefaultValues(): void {
+        $response = jsend()->get();
+        
+        $this->assertJson(json_encode(array(
+            'status' => 'success',
+            'data'   => array()
+        )), $response);
+    }
+    
+    public function testRendersCorrectly(): void {
+        Route::get('/jsend', static function () {
+            return jsend()->failed()->code(404)->get();
+        });
+        
+        $response = $this->call('get', '/jsend');
+        
+        $this->assertEquals(json_encode(array(
+            'status' => 'fail',
+            'data'   => array(),
+            'errors' => null,
+            'code'   => 404,
+        )), $response->getContent());
+    }
+    
+    public function testRenderCompatibility(): void {
+        Route::get('/jsend', static function () {
+            return jsend()->failed()->code(404)->get();
+        });
+        
+        $response = $this->call('get', '/jsend');
+        
+        $this->assertEquals(json_encode(array(
+            'status' => 'fail',
+            'data'   => array(),
+            'errors' => null,
+            'code'   => 404,
+        )), $response->getContent());
+    }
+    
+    public function testHttpStatus(): void {
+        Route::get('/jsend_http', static function () {
+            return jsend()->failed()->code(403)->get(403);
+        });
+        
+        $res = $this->call('get', '/jsend_http');
+        $this->assertEquals(403, $res->status());
+    }
+    
+    public function testInvalidBuilderException(): void {
+        $this->expectException(InvalidArgumentException::class);
+        $this->app['config']->set('jsend.builder', '');
+        jsend()->get();
+    }
 }

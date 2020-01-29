@@ -1,11 +1,9 @@
 language: php
-install: composer install -o
+install:
+  - wget -O phpunit https://phar.phpunit.de/phpunit-8.phar
+  - chmod +x ./phpunit
+  - composer install -o
 php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - hhvm
-  - nightly
-after_success:
-  - CODECLIMATE_REPO_TOKEN=f9c21f5f87187047d967a0f50281bd5b663820942a7b3e914c9d0b19c3d819f3 ./vendor/bin/test-reporter # CodeClimate
+  - 7.2
+  - 7.3
+  - 7.4
